@@ -26,7 +26,7 @@ class App extends Component {
       this.setState({aircrafts: { data }})
 
       console.log(this.state.aircrafts.data)
-    }), 1000)
+    }), 2000)
     
   }
   
@@ -37,7 +37,7 @@ class App extends Component {
   displayAircraft = () => {
     const google = window.google
     return this.state.aircrafts.data.map((aircraft, index) => {
-      return <Marker key={index} id={index} position={{lat: aircraft.lat, lng: aircraft.lon}}
+      return <Marker key={index} id={index} position={{lat: aircraft.lat, lng: aircraft.lon}} name= {"Title"}
         icon={{
           path: "M510,255c0-20.4-17.85-38.25-38.25-38.25H331.5L204,12.75h-51l63.75,204H76.5l-38.25-51H0L25.5,255L0,344.25h38.25l38.25-51h140.25l-63.75,204h51l127.5-204h140.25C492.15,293.25,510,275.4,510,255z",
           fillColor: '#FF0000',
@@ -50,15 +50,6 @@ class App extends Component {
       />
     })  
   }
-
-  // icon={{
-  //   url: vector,
-  //   anchor: new google.maps.Point(17, 46),
-  //   scaledSize: new google.maps.Size(20, 20),
-  //   rotation: 360,
-  // }}
-  
-  
   
   render() {
     const mapStyles = {
